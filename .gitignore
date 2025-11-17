@@ -11,4 +11,26 @@
 /nbproject/ant-deploy.xml
 
 # Ficheros de log
-*.log
+*.log# 🍕 Proyecto PizzeriaJSF
+
+Este es un proyecto académico para la asignatura "Tecnología de sistemas de información en la red" de la UPV.
+
+Es una aplicación web de una pizzería desarrollada con JavaServer Faces (JSF) que sigue la arquitectura MVC y cumple con los requisitos de la UD2.
+
+## 🚀 Tecnologías Utilizadas
+
+* **JavaServer Faces (JSF) 2.2**
+* **Java EE (CDI):** `@Named`, `@SessionScoped`, `@ApplicationScoped`
+* **Servidor:** GlassFish
+* **Diseño:** Bootstrap 5 (enlazado por CDN)
+* **Navegación:** Navegación Explícita (`faces-config.xml`)
+* **Seguridad:** Securización Declarativa (`web.xml`) con `form-based authentication`.
+* **Internacionalización (i18n):** Soporte para Español e Inglés (`.properties` y `LocaleManagerBean`).
+
+## 📋 Cómo Ejecutar
+
+1.  Clonar este repositorio.
+2.  Abrir el proyecto en NetBeans IDE.
+3.  Asegurarse de tener un servidor GlassFish configurado.
+4.  Configurar la Securización en GlassFish (crear el usuario `cliente` con la `Group List` `USUARIO_REGISTRADO` en el `file realm`).
+5.  Ejecutar (Run) el proyecto.
