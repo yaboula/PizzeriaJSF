@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <navigation-rule>
+        <from-view-id>/bienvenida.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>ir_a_categorias</from-outcome>
+            <to-view-id>/privado/categorias.xhtml</to-view-id>
+            <redirect/> 
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/privado/categorias.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>ir_a_carrito</from-outcome>
+            <to-view-id>/privado/carrito.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>ir_a_masas</from-outcome>
+            <to-view-id>/privado/seleccionarMasa.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>ir_a_salsas</from-outcome>
+            <to-view-id>/privado/seleccionarSalsa.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>ir_a_quesos</from-outcome>
+            <to-view-id>/privado/seleccionarQueso.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/privado/seleccionarMasa.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>volver_a_categorias</from-outcome>
+            <to-view-id>/privado/categorias.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>ir_a_salsas</from-outcome>
+            <to-view-id>/privado/seleccionarSalsa.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/privado/seleccionarSalsa.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>volver_a_categorias</from-outcome>
+            <to-view-id>/privado/categorias.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>ir_a_quesos</from-outcome>
+            <to-view-id>/privado/seleccionarQueso.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/privado/seleccionarQueso.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>volver_a_categorias</from-outcome>
+            <to-view-id>/privado/categorias.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>ir_a_carrito</from-outcome>
+            <to-view-id>/privado/carrito.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/privado/carrito.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>volver_a_categorias</from-outcome>
+            <to-view-id>/privado/categorias.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>ir_a_facturacion</from-outcome>
+            <to-view-id>/privado/facturacion.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/privado/facturacion.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>ir_a_confirmacion</from-outcome>
+            <to-view-id>/privado/confirmacion.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/privado/confirmacion.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>volver_a_bienvenida</from-outcome>
+            <to-view-id>/bienvenida.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    <application>
+        
+        <resource-bundle>
+            <base-name>com.mipizzeria.beans.mensajes</base-name>
+            
+            <var>msg</var>
+        </resource-bundle>
+        
+        <locale-config>
+            <default-locale>es</default-locale>
+            <supported-locale>en</supported-locale>
+        </locale-config>
+        
+    </application>
+
+</faces-config>

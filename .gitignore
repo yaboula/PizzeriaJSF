@@ -1,0 +1,14 @@
+# Ficheros compilados (Bytecode)
+/build/
+/dist/
+
+# Ficheros privados y de configuración del IDE
+/nbproject/private/
+/nbproject/genfiles.properties
+
+# Ficheros generados por NetBeans (Ant)
+/nbproject/build-impl.xml
+/nbproject/ant-deploy.xml
+
+# Ficheros de log
+*.log

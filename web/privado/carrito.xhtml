@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view locale="#{localeManagerBean.localeCode}">
+    <h:head>
+        <title>#{msg['carrito.titulo']}</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+        
+        <style>
+            .error-message {
+                color: #D32F2F;
+                background-color: #FFCDD2;
+                border: 1px solid #D32F2F;
+                padding: 10px;
+                margin-bottom: 15px;
+                border-radius: 4px;
+                list-style: none; 
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4">
+                            
+                            <h1 class="card-title text-center mb-2">#{msg['carrito.h1']}</h1>
+                            <p class="text-center text-muted mb-4">#{msg['carrito.subtitulo']}</p>
+                            
+                            <h:messages styleClass="error-message" />
+
+                            <h:panelGroup rendered="#{pizzaBean.masa != null or pizzaBean.salsa != null or pizzaBean.queso != null}">
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <strong>#{msg['comun.ingrediente.masa']}:</strong>
+                                        <h:outputText value="#{pizzaBean.masa}" styleClass="fw-bold text-primary"/>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <strong>#{msg['comun.ingrediente.salsa']}:</strong>
+                                        <h:outputText value="#{pizzaBean.salsa}" styleClass="fw-bold text-primary"/>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <strong>#{msg['comun.ingrediente.queso']}:</strong>
+                                        <h:outputText value="#{pizzaBean.queso}" styleClass="fw-bold text-primary"/>
+                                    </li>
+                                </ul>
+                            </h:panelGroup>
+                            
+                            <h:panelGroup rendered="#{pizzaBean.masa == null and pizzaBean.salsa == null and pizzaBean.queso == null}">
+                                <p class="text-center text-muted">#{msg['carrito.vacio']}</p>
+                            </h:panelGroup>
+                            
+
+                            <h:form>
+                                <div class="d-flex justify-content-between">
+                                    <h:commandButton value="#{msg['carrito.boton.volver']}" action="volver_a_categorias" styleClass="btn btn-outline-secondary" />
+                                    <h:commandButton value="#{msg['carrito.boton.pagar']}" action="#{pizzaBean.procederAlPago()}" styleClass="btn btn-success btn-lg" />
+                                    <h:commandButton value="#{msg['comun.cerrarSesion']}" action="#{pizzaBean.logout()}" styleClass="btn btn-outline-danger" />
+                                </div>
+                            </h:form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h:body>
+    </f:view>
+</html>
+
+
+
